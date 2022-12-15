@@ -1,11 +1,12 @@
-# Weekly death statistics
+# Wöchentliche Sterblichkeit
 
-Data source: [Eurostat](https://ec.europa.eu/eurostat/)
+[Original-ReadMe von djhurio](https://github.com/djhurio/COVID-19#readme).
 
-Read more:
+Hier: Andere Darstellung fokussiert auf Deutschland,
+mit separat zusammengefasster Sterblichkeit der prä-pandemischen Jahre.
 
-- [Weekly death statistics](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Weekly_death_statistics)
-- [data](https://ec.europa.eu/eurostat/web/products-datasets/-/demo_r_mwk_ts)
-- [metadata](https://ec.europa.eu/eurostat/cache/metadata/en/demomwk_esms.htm)
+![](./output/Germany.jpg)
 
-Weekly death rate is calculated as weekly number of death divided by the total population at the beginning of a corresponding year ([data](https://ec.europa.eu/eurostat/databrowser/view/demo_gind/)) and multiplied by 1,000,000.
+[DeStatis](https://www.destatis.de/DE/Themen/Querschnitt/Corona/Gesellschaft/bevoelkerung-sterbefaelle.html)
+dagegen vergleicht 2022 mit 2018-2021, anstatt mit mehreren Jahren *vor* CoVID19.
+Für eine Erklärung dieses schmalen und vermischten Zeitraumes wäre ich dankbar.
