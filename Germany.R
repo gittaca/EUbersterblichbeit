@@ -23,7 +23,7 @@ start <- min(pre$year)
 end <- max(pre$year)
 
 ggplot(mapping = aes(x = week, y = death.rate)) +
-  geom_boxplot(data = pre, aes(group = week), show.legend = FALSE) +
+  geom_line(data = pre, aes(alpha = year), show.legend = FALSE) +
   geom_line(
     data = post,
     mapping = aes(y = death.rate, color = year),
