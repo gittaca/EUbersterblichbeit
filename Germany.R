@@ -1,6 +1,7 @@
 library(ggplot2)
 
 # Run djhurio's script once to get all EU data & regenerate faceted plots
+# install.packages(c("data.table", "ISOcodes", "eurostat"))
 # source('deaths-by-week.R'); rm(list = ls())
 
 # My goal here: Split mortality data for a single country by pre- & post-CoVID
