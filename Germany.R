@@ -47,7 +47,9 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
     x = 'Kalenderwoche'
   ) +
   theme_minimal() +
-  theme(legend.position = c(.5, .8),
-        legend.background = element_rect(fill = 'white', linewidth = 0))
+  theme(
+    legend.position = c(.5, .8),
+    legend.background = element_rect(fill = 'white', linewidth = 0)
+  )
 
 ggsave(file_name)
