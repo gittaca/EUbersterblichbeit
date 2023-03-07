@@ -60,8 +60,8 @@ dat[grepl("W99", time)]
 dat <- dat[!grepl("W99", time)]
 
 dat[, y2020 := factor(x = ifelse(year < 2020L, 0, year - 2019L),
-                      levels = 0:3,
-                      labels = c("Y<2020", "Y=2020", "Y=2021", "Y=2022"))]
+                      levels = 0:4,
+                      labels = c("Y<2020", "Y=2020", "Y=2021", "Y=2022", "Y=2023"))]
 dat[, .N, keyby = .(y2020)]
 
 
@@ -70,6 +70,13 @@ dat1 <- merge(dat[sex == "T"],
               dat.pop[indic_de == "JAN", .(year, geo, pop = values)],
               by = c("year", "geo"), all.x = T)
 
+# While 2023 population data isn't released, let's simply assume same as last year
+current_year <- format(Sys.time(), "%Y")
+last_year <- as.character(as.integer(current_year) - 1)
+
+if (all(is.na(dat1[year == current_year & geo == "DE"]$pop))) {
+  dat1[year == current_year & geo == "DE"]$pop <- dat1[year == last_year & geo == "DE"]$pop[1]
+}
 
 dat1[, death.rate := values / pop * 1e6]
 
