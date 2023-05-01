@@ -67,4 +67,7 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
     legend.background = element_rect(fill = 'white', linewidth = 0)
   )
 
-ggsave(file_name)
+ggsave(file_name,
+       width = 2048,
+       height = 1536,
+       units = 'px')
