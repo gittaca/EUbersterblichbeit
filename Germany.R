@@ -7,7 +7,7 @@ library(ggplot2)
 # My goal here: Split mortality data for a single country by pre- & post-CoVID
 # TODO: Loop over all other countries & generate plots with English labels.
 country <- 'Germany'
-covid_start <- 2020
+covid_start <- 2019
 label_pre  <- 'vor SARS-CoV2'
 label_post <- 'nach SARS-CoV2'
 weeks <- seq(from = 0, to = 52, by = 4)
