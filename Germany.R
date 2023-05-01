@@ -25,6 +25,9 @@ data <- readr::read_csv('data.csv') |>
 
 pre <- dplyr::filter(data, SARS == label_pre)
 post <- dplyr::filter(data, SARS == label_post)
+N_years <- length(unique(post$year))
+max_deaths <- ceiling(max(post$death.rate, pre$death.rate))
+
 start <- min(pre$year)
 end <- max(pre$year)
 # Grippe <- dplyr::filter(pre, Woche > 7 & Woche < 11) %>%
@@ -43,6 +46,7 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
   scale_color_brewer(palette = 'YlOrRd', name = label_post) +
   scale_x_continuous(breaks = weeks,
                      minor_breaks = NULL) +
+  scale_y_continuous(limits = c(0, max_deaths)) +
   ylab('Todesfälle pro 1 Mio. Einwohner:inne:n') +
   # ylab('Death rate [per million]') +
   labs(
@@ -63,9 +67,10 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
   ) +
   theme_minimal() +
   theme(
-    legend.position = c(.5, .8),
+    legend.position = c(.5, .175),
     legend.background = element_rect(fill = 'white', linewidth = 0)
-  )
+  ) +
+    guides(col = guide_legend(ncol = N_years, label.position = 'bottom'))
 
 ggsave(file_name,
        width = 2048,
