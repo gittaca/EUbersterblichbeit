@@ -8,8 +8,11 @@ mit separat zusammengefasster Sterblichkeit der prä-pandemischen Jahre.
 ![](./output/Germany.jpg)
 
 [DeStatis](https://www.destatis.de/DE/Themen/Querschnitt/Corona/Gesellschaft/bevoelkerung-sterbefaelle.html)
-dagegen vergleicht 2022 mit 2018-2021, anstatt mit mehreren Jahren *vor* CoVID19.
-Für eine Erklärung dieses schmalen und vermischten Zeitraumes wäre ich dankbar.
+dagegen vergleicht 2022 mit '18-'21 und 2023 mit '19-22,
+anstatt mit mehreren Jahren *vor* CoVID19.
+Zwar machen sie diesen "Wechsel des Bezugszeitraums" kenntlich,
+aber für eine Erklärung dieses schmalen und vermischten Zeitraumes wäre ich dankbar.
+Klarer Fall von [shifting baseline](https://en.wikipedia.org/wiki/Shifting_baseline).
 
 [EuroMOMO.eu](https://www.euromomo.eu/bulletins/2023-08/) erlaubt sich
 bei der "age group 0-14 years" auch einen Augenbrauen-hebenden Kniff:
