@@ -12,6 +12,7 @@ dagegen vergleicht 2022 mit '18-'21 und 2023 mit '19-22,
 anstatt mit mehreren Jahren *vor* CoVID19.
 Zwar machen sie diesen "Wechsel des Bezugszeitraums" kenntlich,
 aber für eine Erklärung dieses schmalen und vermischten Zeitraumes wäre ich dankbar.
+Nein, nicht einfach nur [diese Erklärung](https://twitter.com/TheVertlartnic/status/1672698705617600512)...
 Klarer Fall von [shifting baseline](https://en.wikipedia.org/wiki/Shifting_baseline).
 
 [EuroMOMO.eu](https://www.euromomo.eu/bulletins/2023-08/) erlaubt sich
