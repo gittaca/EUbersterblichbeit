@@ -46,7 +46,6 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
   scale_color_brewer(palette = 'YlOrRd', name = label_post) +
   scale_x_continuous(breaks = weeks,
                      minor_breaks = NULL) +
-  scale_y_continuous(limits = c(0, max_deaths)) +
   ylab('Todesfälle pro 1 Mio. Einwohner:inne:n') +
   # ylab('Death rate [per million]') +
   labs(
