@@ -70,7 +70,7 @@ dat1 <- merge(dat[sex == "T"],
               dat.pop[indic_de == "JAN", .(year, geo, pop = values)],
               by = c("year", "geo"), all.x = T)
 
-# While 2023 population data isn't released, let's simply assume same as last year
+# While latest population data isn't released, let's simply assume same as last year
 current_year <- format(Sys.time(), "%Y")
 last_year <- as.character(as.integer(current_year) - 1)
 
