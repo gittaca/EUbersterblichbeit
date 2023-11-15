@@ -2,7 +2,7 @@ library(ggplot2)
 
 # Run djhurio's script once to get all EU data & regenerate faceted plots
 # install.packages(c("data.table", "ISOcodes", "eurostat"))
-# source('deaths-by-week.R'); rm(list = ls())
+source('deaths-by-week.R'); rm(list = ls())
 
 # My goal here: Split mortality data for a single country by pre- & post-CoVID
 # TODO: Loop over all other countries & generate plots with English labels.
@@ -66,7 +66,7 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
   ) +
   theme_minimal() +
   theme(
-    legend.position = c(.5, .175),
+    legend.position = c(.5, .8),
     legend.background = element_rect(fill = 'white', linewidth = 0)
   ) +
     guides(col = guide_legend(ncol = N_years, label.position = 'bottom'))
