@@ -15,7 +15,7 @@ file_name <- paste0('output/', country, '.jpg')
 
 data <- readr::read_csv('data.csv') |>
   dplyr::filter(cntry == country) |>
-  dplyr::transmute(year = gsub('W\\d+', '', time),
+  dplyr::transmute(year, # = gsub('W-\\d+', '', time),
                    # country = cntry, # for all countries, instead of filter
                    week, death.rate) |>
   dplyr::mutate(SARS = ifelse(year < covid_start, label_pre, label_post))

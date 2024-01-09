@@ -21,7 +21,7 @@ setDT(dat.pop)
 dat.pop
 dat.pop[, .N, keyby = .(indic_de)]
 
-dat.pop[, year := year(time)]
+dat.pop[, year := year(TIME_PERIOD)]
 
 dat.pop[indic_de == "JAN", .(year, geo, pop = values)]
 
@@ -33,6 +33,7 @@ setDT(dat)
 dat
 
 sapply(dat, class)
+dat[, time := TIME_PERIOD]
 
 dat[, .N, keyby = .(sex)]
 dat[, .N, keyby = .(unit)]
@@ -41,7 +42,7 @@ dat[, .N, keyby = .(geo)]
 dat[, .N, keyby = .(time)]
 
 dat[, year := as.integer(substr(time, 1, 4))]
-dat[, week := as.integer(substr(time, 6, 7))]
+dat[, week := as.integer(substr(time, 7, 8))]
 
 dat[, .N, keyby = .(year)]
 dat[, .(n = .N, Y = sum(values)), keyby = .(year)][, P := prop.table(Y)][]
@@ -60,8 +61,8 @@ dat[grepl("W99", time)]
 dat <- dat[!grepl("W99", time)]
 
 dat[, y2020 := factor(x = ifelse(year < 2020L, 0, year - 2019L),
-                      levels = 0:4,
-                      labels = c("Y<2020", "Y=2020", "Y=2021", "Y=2022", "Y=2023"))]
+                      levels = 0:5,
+                      labels = c("Y<2020", "Y=2020", "Y=2021", "Y=2022", "Y=2023", "Y=2024"))]
 dat[, .N, keyby = .(y2020)]
 
 
@@ -164,3 +165,4 @@ print(pl3)
 dev.off()
 
 fwrite(x = dat3, file = "data.csv")
+
