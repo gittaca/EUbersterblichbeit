@@ -18,7 +18,8 @@ data <- readr::read_csv('data.csv') |>
   dplyr::transmute(year, # = gsub('W-\\d+', '', time),
                    # country = cntry, # for all countries, instead of filter
                    week, death.rate) |>
-  dplyr::mutate(SARS = ifelse(year < covid_start, label_pre, label_post))
+  dplyr::mutate(SARS = ifelse(year < covid_start, label_pre, label_post),
+                year = as.character(year)) #|>
 # dplyr::group_by(Woche)
 # death_median = median(death.rate),
 # death_iqr = IQR(death.rate)
