@@ -7,8 +7,9 @@ mit separat zusammengefasster Sterblichkeit der prä-pandemischen Jahre.
 
 ![](./output/Germany.jpg)
 
-[DeStatis](https://www.destatis.de/DE/Themen/Querschnitt/Corona/Gesellschaft/bevoelkerung-sterbefaelle.html)
-dagegen vergleicht 2022 mit '18-'21 und 2023 mit '19-22,
+[DeStatis](https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Sterbefaelle-Lebenserwartung/sterbefallzahlen.html)
+dagegen vergleicht die Pandemiejahre mit einem gleitenden 3-Jahresdurchschnitt
+(der im Laufe der Jahre eben auch mehr Pandemiejahre mit beinhaltet)
 anstatt mit mehreren Jahren *vor* CoVID19.
 Zwar machen sie diesen "Wechsel des Bezugszeitraums" kenntlich,
 aber für eine Erklärung dieses schmalen und vermischten Zeitraumes wäre ich dankbar.
