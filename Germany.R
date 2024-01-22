@@ -18,8 +18,7 @@ data <- readr::read_csv('data.csv') |>
   dplyr::transmute(year, # = gsub('W-\\d+', '', time),
                    # country = cntry, # for all countries, instead of filter
                    week, death.rate) |>
-  dplyr::mutate(SARS = ifelse(year < covid_start, label_pre, label_post),
-                year = as.character(year)) #|>
+  dplyr::mutate(SARS = ifelse(year < covid_start, label_pre, label_post)) #|>
 # dplyr::group_by(Woche)
 # death_median = median(death.rate),
 # death_iqr = IQR(death.rate)
@@ -36,7 +35,7 @@ end <- max(pre$year)
 #   dplyr::select(Jahr) %>%
 #   unique()
 
-ggplot(mapping = aes(x = week, y = death.rate)) +
+ggplot(mapping = aes(x = week, y = death.rate, group = year)) +
   geom_line(data = pre, aes(alpha = year), show.legend = FALSE) +
   geom_line(
     data = post,
@@ -44,7 +43,7 @@ ggplot(mapping = aes(x = week, y = death.rate)) +
     linewidth = 1
   ) +
   # facet_wrap(vars(country)) + # for all countries, instead of filter
-  scale_color_brewer(palette = 'YlOrRd', name = label_post) +
+  scale_color_gradient(low = 'orange', high = "darkred", name = label_post) +
   scale_x_continuous(breaks = weeks,
                      minor_breaks = NULL) +
   ylab('Todesfälle pro 1 Mio. Einwohner:inne:n') +
