@@ -7,9 +7,9 @@ source('deaths-by-week.R'); rm(list = ls())
 # My goal here: Split mortality data for a single country by pre- & post-CoVID
 # TODO: Loop over all other countries & generate plots with English labels.
 country <- 'Germany'
-covid_start <- 2019
+covid_start <- 2020
 label_pre  <- 'vor SARS-CoV2'
-label_post <- 'nach SARS-CoV2'
+label_post <- 'mit SARS-CoV2'
 weeks <- seq(from = 0, to = 52, by = 4)
 file_name <- paste0('output/', country, '.jpg')
 
