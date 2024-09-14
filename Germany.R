@@ -9,7 +9,7 @@ source('deaths-by-week.R'); rm(list = ls())
 country <- 'Germany'
 covid_start <- 2020
 label_pre  <- 'vor SARS-CoV2'
-label_post <- 'mit SARS-CoV2'
+label_post <- 'Pandemiejahre'
 weeks <- seq(from = 0, to = 52, by = 4)
 file_name <- paste0('output/', country, '.jpg')
 
@@ -23,13 +23,14 @@ data <- readr::read_csv('data.csv') |>
 # death_median = median(death.rate),
 # death_iqr = IQR(death.rate)
 
-pre <- dplyr::filter(data, SARS == label_pre)
-post <- dplyr::filter(data, SARS == label_post)
-N_years <- length(unique(post$year))
+pre <- dplyr::filter(data, SARS == label_pre) |> dplyr::rename(year_pre = year)
+post <- dplyr::filter(data, SARS == label_post) |> dplyr::rename(year_post = year)
+post_years <- unique(post$year_post)
+N_years <- length(post_years)
 max_deaths <- ceiling(max(post$death.rate, pre$death.rate))
 
-start <- min(pre$year)
-end <- max(pre$year)
+pre_start <- min(pre$year_pre)
+pre_end <- max(pre$year_pre)
 # Grippe <- dplyr::filter(pre, Woche > 7 & Woche < 11) %>%
 #   dplyr::slice_max(death.rate, prop = 0.05) %>%
 #   dplyr::select(Jahr) %>%
@@ -56,9 +57,9 @@ ggplot(mapping = aes(x = week, y = death.rate, group = year)) +
       'Quelle: eurostat demo_r_mwk_ts & GitHub.com/djhurio/COVID-19',
       '\nFrühere Krisen: Grippe im Spätwinter und Hitze im Sommer',
       '\nAlterungstrend: ',
-      start,
+      pre_start,
       '/hellgrau → ',
-      end,
+      pre_end,
       '/schwarz'
     ),
     x = 'Kalenderwoche'
