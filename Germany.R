@@ -53,15 +53,22 @@ pre_end <- max(pre$year_pre)
 
 (compare_post <- ggplot(
     data = post,
-    mapping = aes(x = week, y = death.rate, alpha = year_post, group = year_post)
+    mapping = aes(x = week, y = death.rate, color = factor(year_post))
   ) +
-    geom_line(linewidth = 1, color = "red", show.legend = FALSE) +
+    geom_line(linewidth = 1) +
+    scale_color_brewer(type = "qual", name = 'CoVID-Jahr') +
     scale_x_continuous(breaks = weeks, minor_breaks = NULL) +
     # scale_colour_gradient2(low = 'orange', mid = "blue", midpoint = mid_year, high = "red", name = label_post) +
     xlab('') +
     ylab('') +
     # ) +
-    theme_minimal())
+    guides(color = guide_legend(ncol = N_years, label.position = 'top')) +
+    theme_minimal() +
+    theme(
+      legend.position = 'inside',
+      legend.position.inside = c(.5, .8),
+      legend.background = element_rect(fill = 'white', linewidth = 0)
+    ))
 
 (aggregate_plot <- gridExtra::arrangeGrob(
   compare_pre,
