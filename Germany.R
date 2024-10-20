@@ -56,7 +56,7 @@ pre_end <- max(pre$year_pre)
     mapping = aes(x = week, y = death.rate, color = factor(year_post))
   ) +
     geom_line(linewidth = 1) +
-    scale_color_brewer(type = "qual", name = 'CoVID-Jahr') +
+    scale_color_discrete(name = 'CoVID-Jahr') +
     scale_x_continuous(breaks = weeks, minor_breaks = NULL) +
     # scale_colour_gradient2(low = 'orange', mid = "blue", midpoint = mid_year, high = "red", name = label_post) +
     xlab('') +
